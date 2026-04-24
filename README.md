@@ -318,25 +318,10 @@ If you want to run this repo outside the original HPC environment:
 4. Verify cohort size denominators and hard-coded sample lists (they affect frequencies and plots).
 5. Run one patient/sample end-to-end first to validate assumptions before batch processing.
 
-## References
+## Citation
 
-R packages
-- [R1] Seurat: https://satijalab.org/seurat/
-- [R2] DoubletFinder: https://github.com/chris-mcginnis-ucsf/DoubletFinder
-- [R3] Monocle (Trapnell lab): https://cole-trapnell-lab.github.io/monocle-release/
-- [R4] scMetabolism: https://github.com/wu-yc/scMetabolism
-- [R5] maftools (Bioconductor): https://bioconductor.org/packages/maftools/
-- [R6] dndscv: https://github.com/im3sanger/dndscv
-- [R7] clonevol: https://github.com/hdng/clonevol
-- [R8] REVOLVER (R package): https://github.com/caravagnalab/revolver
-- [R9] ABSOLUTE (Broad): https://software.broadinstitute.org/cancer/cga/absolute
+Wang P, Zhou C, Liu H, Wei Z, Gao Y, Wang Y, Meng F, Zhang Z, Zhou K, Rao K, Cao M, Guo W, Jin Q, Qiu S, Shi Y, Sun H, Gao Q, Zhou J, Hou Y, Peng DH, Fan J, Liu Q, Sun Y. Mature Tertiary Lymphoid Structures Fuel Stem-like CD8 T Cells to Boost Anti-Tumor Immunity in Intrahepatic Cholangiocarcinoma. Submit, 2026.
 
-CLI tools / pipelines
-- [C1] BCFtools: https://samtools.github.io/bcftools/
-- [C2] SAMtools: https://www.htslib.org/
-- [C3] Picard tools: https://broadinstitute.github.io/picard/
-- [C4] vcf2maf: https://github.com/mskcc/vcf2maf
-- [C5] Ensembl VEP: https://www.ensembl.org/info/docs/tools/vep/index.html
-- [C6] CNVkit: https://cnvkit.readthedocs.io/
-- [C7] MSIsensor-pro: https://github.com/xjtu-omics/msisensor-pro
-- [C8] Sentieon: https://www.sentieon.com/
+## Contacts
+
+20310093@tongji.edu.cn or qiliu@tongji.edu.cn
