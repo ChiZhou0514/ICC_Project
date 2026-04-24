@@ -1,4 +1,4 @@
-# Code Script Collection (Genomics / Single-Cell / Spatial)
+# Code Script for manuscript titled "Mature Tertiary Lymphoid Structures Fuel Stem-like CD8 T Cells to Boost Anti-Tumor Immunity in Intrahepatic Cholangiocarcinoma"
 
 This repository is a collection of analysis scripts and notebooks used for genomic, single-cell, and spatial transcriptomics workflows.
 
