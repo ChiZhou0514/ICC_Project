@@ -41,7 +41,7 @@ Many scripts assume a cohort folder structure similar to:
 
 The exact filenames vary by stage, but the scripts generally “chain” outputs from earlier stages.
 
-## Recommended Run Order (Genomic/WES)
+## Genomic/WES
 
 This is the most common dependency chain across the genomic scripts:
 
