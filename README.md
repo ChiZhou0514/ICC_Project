@@ -66,19 +66,19 @@ This is the most common dependency chain across the genomic scripts:
 
 ## Dependencies
 
-### Python (common)
+### Python
 
 - `numpy`, `pandas`, `tqdm`
 - `scipy`, `seaborn`, `matplotlib`
 - `skbio` (Shannon diversity in metrics script)
 - `psutil` (Sentieon license server detection)
 
-### R (common)
+### R 
 
 - Single-cell: `Seurat` [R1], `DoubletFinder` [R2], `monocle` [R3], `scMetabolism` [R4]
 - Genomics: `maftools` [R5], `dndscv` [R6], `clonevol` [R7], `revolver` [R8], `ABSOLUTE` [R9]
 
-### CLI tools (common)
+### CLI tools
 
 - `bcftools` [C1], `samtools` [C2]
 - `picard` (LiftoverVcf, CollectWgsMetrics) [C3]
