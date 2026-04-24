@@ -7,8 +7,6 @@ This repository is a collection of analysis scripts and notebooks used for genom
 ## Contents
 
 - [Directory Overview](#directory-overview)
-- [Expected Data Layout](#expected-data-layout)
-- [Recommended Run Order (Genomic/WES)](#recommended-run-order-genomicwes)
 - [Dependencies](#dependencies)
 - [Detailed File Guide](#detailed-file-guide)
 - [Portability Checklist](#portability-checklist)
@@ -18,51 +16,6 @@ This repository is a collection of analysis scripts and notebooks used for genom
 - `Genomic analysis/`: WES-style mutation calling/post-processing, CNV calling, clonality, dN/dS, enrichment, and cohort comparison.
 - `Single cell analysis/`: Seurat-based scRNA pipeline plus V(D)J (TCR/BCR) notebooks and metabolism scoring scripts.
 - `Spatial Transcriptomics analysis/`: Spatial notebooks (public ST, DSP, 10X HD).
-
-## Expected Data Layout
-
-Many scripts assume a cohort folder structure similar to:
-
-```text
-/home_2//
-  outcome/
-    <patient_id>/
-      WES/
-        NC/                      # matched normal (when present)
-          gatk/deduped.bam
-        <tissue_id>/             # tumor region(s), e.g. PT, PT1-1, PT2-1, ...
-          gatk/
-            deduped.bam
-            output_filter.vcf.gz         # caller output
-            4pyclone_snpindels/          # filtered VCF/MAF for clonality pipeline
-          cnv/ or cnv1/                  # CNVkit outputs (varies by script)
-          msi/                           # msisensor-pro outputs
-```
-
-The exact filenames vary by stage, but the scripts generally “chain” outputs from earlier stages.
-
-## Genomic/WES
-
-This is the most common dependency chain across the genomic scripts:
-
-1. **Variant calling**: `Genomic analysis/Call_Mutation/Mutect.py`
-2. **VCF filtering + VCF→MAF conversion + pyclone VCF subset**: `Genomic analysis/Call_Mutation/VCFfilter.py`
-3. **Merge region/patient MAF tables + clinical labels + clonality annotations**: `Genomic analysis/Call_Mutation/mergeVCF.py`
-4. **CNV calling**: `Genomic analysis/CNV_analysis/CNVkit.py`
-5. **Gene-level CNV tables + TLS/outcome frequency summaries**: `Genomic analysis/CNV_analysis/CNVkitGene.py`
-6. **MSI calling**: `Genomic analysis/microsatellite_analysis.py`
-7. **Clonality / evolution (PyClone → clonevol → REVOLVER)**:
-   - `Genomic analysis/Clone_analysis/pycloneMajorCopy.py`
-   - `Genomic analysis/Clone_analysis/clonevol.r`
-   - `Genomic analysis/Clone_analysis/REVOLVER.py`
-   - `Genomic analysis/Clone_analysis/revolver.r`
-8. **dN/dS inputs + runs**:
-   - `Genomic analysis/dNds/dNdS.py` → prepares TSVs
-   - `Genomic analysis/dNds/dNdSOutCome.r` and `Genomic analysis/dNds/dNdSTLS.r` → run dndscv
-9. **Pathway enrichment and metric aggregation**:
-   - `Genomic analysis/MutationEnrichment.py`
-   - `Genomic analysis/scripts_used_to_calculate_final_metrics.py`
-10. **Cohort comparison**: `Genomic analysis/cohort_compare/cohortCompare.py`
 
 ## Dependencies
 
